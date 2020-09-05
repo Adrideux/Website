@@ -1,0 +1,190 @@
+/*** Mixins & Default Styles ***/
+a{
+    text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*** Header Styles ***/
+header {
+    display: flex;
+}
+
+/*** Navigation Styles ***/
+
+nav {
+  width: 100%;
+  height: 6rem;
+  background-color: #2370a0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* position: fixed; */
+  z-index: 10;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 1000px) {
+    nav{
+        /* position: relative; */
+        height: auto;
+    }
+}
+
+#brand, #menu {
+  display: flex;
+  align-items: center;
+}
+
+#brand {
+  padding-left: 4%;
+  font-family: 'Orbitron';
+}
+
+#logo {
+  width: 5rem;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#word-mark {
+  background: #133642;
+  font-size: 1.7rem;
+  color: #fff;
+  border-radius: 90px;
+  margin: 1rem;
+  padding: 1%;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+#word-mark a{
+    color: #fff;
+}
+
+/*** Menu Styles ***/
+#menu {
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+#menu a {
+    width: 7rem;
+    height: 1.7rem;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #133642;
+    color: #fff;
+    margin: .30rem;
+    display: block;
+    border-radius: 0.6rem;
+    font-family: 'Orbitron'
+}
+
+
+@media screen and (max-width: 1000px) {
+    #brand{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px){
+   #menu{
+       flex-wrap: wrap;
+   }
+}
+@media screen and (max-width: 650px) {
+    /*#brand{
+        display: none;
+    }*/
+    nav{
+        display: block;
+    }
+    #menu{
+        justify-content: center;
+    }
+}
+
+/** Main **/
+
+main {
+    overflow: auto;
+    background-color: #133642;
+    min-height: 100%;
+    color: #fff;
+    font-family: Lilita One;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+main *{
+    font-size: 1.2rem;
+}
+main h1 {
+    font-size: 5rem;
+    color: #2370a0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+main h2{
+    font-size: 3rem;
+    color: #2370a0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 5rem;
+}
+main h3 {
+    font-size: 3;
+    font-family: Orbitron;
+    color: black;
+}
+main mark{
+    background-color: inherit;
+    color: #2370a0;
+}
+
+main p {
+    padding-left: 1rem;
+}
+
+main ul {
+    padding-left: 1rem;
+}
+main ul li {
+    margin-left: 1rem;
+    list-style-type: disc;
+}
+main ul li a{
+    color: #fff;
+}
+/* @media screen and (min-width: 800px){
+   main{
+       margin-top: 90px;
+   }
+} */
+
+footer{
+    background-color: #2370a0;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+footer i{
+    font-size: 1.3rem;
+}
+
+footer p{
+    margin-top: .5rem;
+    font-family: Lilita One;
+    font-size: .7rem
+}

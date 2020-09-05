@@ -1,0 +1,11 @@
+i{
+    background-color: #133642;
+    color: #fff;
+    border-radius: 50%;
+    padding: .3em;
+}
+i:hover{
+    transform: scale(1.2);
+    color: #2370a0;
+    transition-duration: .2s
+}
