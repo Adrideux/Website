@@ -1,1 +1,1 @@
-A sample of my personal website
+My personal website
