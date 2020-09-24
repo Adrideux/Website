@@ -36,4 +36,4 @@
         </header>
 
     	<main>
-            <!-- <?php require 'templates/layout/partials/events.php' ?> -->
+            <?php require 'templates/layout/partials/events.php' ?>

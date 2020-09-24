@@ -1,42 +1,67 @@
+<?php
 
+    $pdo = new PDO('sqlite:database/events.db');
+    $query = $pdo->query('SELECT * FROM EVENT');
+    if($query === false){
+        var_dump($pdo->errorInfo());
+        die('Erreur SQL');
+    }
+    $db = $query->fetchAll(PDO::FETCH_OBJ);
+?>
 <aside id="event">
     <h1>Prochaines Dates</h1>
 
-    {% for event in EVENTS %}
-        {% if event.date.strftime("%Y%m%d%H%M") > datetime.strftime("%Y%m%d%H%M") %}
+    <?php
+    $at_least_one=0;
+    foreach ($db as $key) {
+        if( ($key->DATE_YEAR*10000)+($key->DATE_MONTH*100)+$key->DATE_DAY > (date('Y')*10000)+(date('m')*100)+date('d') ){
+            $at_least_one=1;
+            ?>
+
             <section class="card">
-                <h1> {{ event.name }}</h1>
-                <p class="date"> {{ event.date.strftime("%A %d %B %Y") }} </p>
-                <p class="time"> {{ event.date.strftime("%Hh%M")}}</p>
-                <p class="lieu"> {{ event.place }} </p>
+                <h1><?= $key->NAME ?></h1>
+                <p class="date">
+                    <?= $key->DATE_DAY ?>/<?= $key->DATE_MONTH ?>/<?= $key->DATE_YEAR ?>
+                </p>
+                <p class="time"><?= $key->DATE_HOUR ?>h<?= $key->DATE_MINUTE ?></p>
+                <p class="lieu">
+                    <?= $key->PLACE ?>
+                </p>
+                <?php
+                    if(!is_null($key->WEB))
+                        echo "<a href='".$key->WEB."'> <i class='fas fa-globe'></i></a>";
+                    if(!is_null($key->MAIL))
+                        echo "<a href='".$key->MAIL."'> <i class='fas fa-envelope'></i></a>";
+                    if(!is_null($key->FACEBOOK))
+                        echo "<a href='".$key->FACEBOOK."'> <i class='fab fa-facebook-square'></i></a>";
+                    if(!is_null($key->INSTA))
+                        echo "<a href='".$key->INSTA."'><i class='fab fa-instagram'></i></a>";
+                    if(!is_null($key->YOUTUBE))
+                        echo "<a href='".$key->YOUTUBE."'><i class='fab fa-youtube'></i></a>";
 
-                {% if event.mail != None %}
-                    <a href="event.mail"> <i class="fas fa-envelope"></i> </a>
-                {% endif %}
-                {% if event.fb != None %}
-                    <a href="event.mail"> <i class="fas fa-envelope"></i> </a>
-                {% endif %}
-                {% if event.insta != None %}
-                    <a href="event.mail"> <i class="fas fa-envelope"></i> </a>
-                {% endif %}
-                {% if event.yt != None %}
-                    <a href="#"></a>
-                {% endif %}
 
-                {% if event.display_socials != 0 %}
-                {% include 'layout/partials/socials.html'%}
-                {% endif %}
+                    if($key->CANCELED == 1)
+                        echo "<h2 class='canceled'>ANNULÉ</h2>";
+                    if($key->REPORTED == 1)
+                        echo "<h2 class='canceled'>ÉVÈNEMENT REPORTÉ</h2>";
+                    if($key->SOLDOUT == 1)
+                        echo "<h2 class='canceled'>PLUS DE PLACES DISPONIBLE</h2>";
+                ?>
 
-                {% if event.canceled == 1 %}
-                    <h2 class="canceled">ANNULÉ</h2>
-                {% endif %}
-                {% if event.soldout == 1 %}
-                    <h2 class="canceled">PLUS DE PLACE DISPONIBLE</h2>
-                {% endif %}
-                {% if event.reported == 1 %}
-                    <h2 class="canceled">EVENEMENT REPORTÉ</h2>
-                {% endif %}
             </section>
-        {% endif %}
-   {% endfor %}
+
+            <?php
+        }
+    }
+    if($at_least_one == 0){
+        echo "
+            <section class='card'>
+                <h1>Aucune date de prevue pour l'instant</h1>";
+        require 'templates/layout/partials/socials.html';
+        echo "
+            </section>
+        ";
+    }
+    ?>
+
 </aside>

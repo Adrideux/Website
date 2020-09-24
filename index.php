@@ -8,5 +8,4 @@
 EOT; ?>
 <?php require 'templates/layout/default.php' ?>
 
-
 <?php require 'templates/layout/footer.php' ?>
