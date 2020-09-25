@@ -16,6 +16,7 @@ EOT;
 
     ["<input type='checkbox' name='paid' value='yes' id='paid-yes'> <label for='paid-yes'>L évenement sera payant pour le publique</label>","<i class='fas fa-money-bill-alt'></i>"],
     ["<input type='number' name='price' placeholder='Prix du ticket' />","<i class='fas fa-tag'></i>"],
+    ["<input type='number' name='number of places' placeholder='Nombre de places disponible' />","<i class='fas fa-couch'></i>"],
 
     ["<textarea type='text' name='details' placeholder='Ecrivez votre message'></textarea>","<i class='fas fa-comment-alt'></i>"],
 
