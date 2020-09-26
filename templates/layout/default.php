@@ -7,7 +7,7 @@
 
         <title>Adrien Quintane</title>
         <!-- fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lilita+One|Orbitron&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
         <!-- css -->
         <link rel="stylesheet" type="text/css" href="static/css/reset.css" />
@@ -23,8 +23,9 @@
     	<header>
     	<nav>
             <div id="brand">
-                <img src="static/imgs/logo_adri.png" alt="" id="logo">
+                <img src="static/imgs/adri-1.png" alt="" id="logo">
                 <h1 id="word-mark"><a href="{{ url_for('home') }}">Adrien Quintane</a></h1>
+                <img src="static/imgs/adri-2.png" alt="" id="logo">
             </div>
             <div id="menu">
                 <a href="index.php">accueil</a>
@@ -36,4 +37,3 @@
         </header>
 
     	<main>
-            <?php require 'templates/layout/partials/events.php' ?>

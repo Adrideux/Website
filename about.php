@@ -33,8 +33,8 @@ EOT ?>
 
     <h2>Mes Projets</h2>
     <h3>Mes projets persos</h3>
-        <p>Tout mes projets solo. De la simple transcription à des albums plus complets.<br>
-        Pour l'instant assez incomplet mais tout est en progret. <br>
+        <p>Tout mes projets solo. De la simple transcription à des albums plus complets.
+        Pour l'instant assez incomplet mais tout est en progret. 
         Vous pouvez retrouver tout ceci sur Instagram ou sur tout mes autres reseau sociaux </p>
         <div class="bandeau_albums">
         </div>

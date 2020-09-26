@@ -1,3 +1,9 @@
+/*** Fonts ***/
+@font-face {
+    src: url("/static/fonts/COOPBL.TTF");
+    font-family: COOPBL;
+}
+
 /*** Mixins & Default Styles ***/
 a{
     text-decoration: none;
@@ -7,6 +13,7 @@ a{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all 0.3s;
 }
 
 body {
@@ -23,12 +30,12 @@ header {
 
 nav {
   width: 100%;
-  height: 6rem;
-  background-color: #2370a0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* #904f15 */
+  /* background-color: #000; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
   /* position: fixed; */
-  z-index: 10;
+  /* z-index: 10; */
   transition: all 0.3s;
 }
 @media screen and (max-width: 1000px) {
@@ -41,60 +48,77 @@ nav {
 #brand, #menu {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 #brand {
-  padding-left: 4%;
-  font-family: 'Orbitron';
+  font-family: 'Holtwood One SC';
+  width: 100%;
 }
 
 #logo {
-  width: 5rem;
-  background: #fff;
-  border-radius: 50%;
+  width: 15rem;
+  /* border-radius: 50%; */
   cursor: pointer;
 }
 
 #word-mark {
-  background: #133642;
-  font-size: 1.7rem;
-  color: #fff;
-  border-radius: 90px;
+  /* background-color: #fff; */
+  font-size: 3rem;
+
+  color: #000;
+
+  text-align: center;
+
   margin: 1rem;
   padding: 1%;
-  opacity: 1;
-  transition: all 0.3s;
+  /* border-radius: 90px; */
 }
 
 #word-mark a{
-    color: #fff;
+    color: #000;
 }
 
 /*** Menu Styles ***/
 #menu {
-  justify-content: flex-end;
+  justify-content: center;
+
   padding-right: 1rem;
+
+  border-top: .4rem double #000;
+  border-bottom: .4rem double #000;
 }
 
 #menu a {
-    width: 7rem;
-    height: 1.7rem;
-    font-size: 1.3rem;
-    text-align: center;
-    background-color: #133642;
-    color: #fff;
-    margin: .30rem;
     display: block;
-    border-radius: 0.6rem;
-    font-family: 'Orbitron'
+
+    font-size: 2.3rem;
+    text-align: center;
+    font-family: 'PT Serif';
+
+    background-color: #fff;
+    color: #000;
+
+    /* width: 7rem;
+    height: 2.7rem; */
+    padding: .1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    border-right: .05rem solid #000
+}
+
+#menu a:last-child{
+    border-right: none;
 }
 
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     #brand{
         flex-direction: column;
     }
-}
+} */
 
 @media screen and (max-width: 800px){
    #menu{
@@ -102,9 +126,9 @@ nav {
    }
 }
 @media screen and (max-width: 650px) {
-    /*#brand{
+    #logo{
         display: none;
-    }*/
+    }
     nav{
         display: block;
     }
@@ -113,47 +137,72 @@ nav {
     }
 }
 
+@media screen and (max-width: 450px) {
+    #word-mark{
+        font-size: 2rem;
+    }
+}
+
 /** Main **/
 
 main {
     overflow: auto;
-    background-color: #133642;
-    min-height: 100%;
-    color: #fff;
-    font-family: Lilita One;
+
+    font-family: Times;
+    text-align: center;
+
+    color: #000;
+    background-color: #fff;
+
     padding-bottom: 3rem;
     padding-left: 2rem;
+    min-height: 100%;
 }
 
 main *{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    color: #000;
 }
+
 main h1 {
     font-size: 5rem;
-    color: #2370a0;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
+    font-family: Georgia;
+
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 main h2{
     font-size: 3rem;
-    color: #2370a0;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    padding-left: 5rem;
+    font-family: "Times New Roman";
+
+    /* color: #fff;
+    background-color: #000; */
+
+    margin: 1.5rem;
+    margin-left: 30%;
+    margin-right: 30%;
+
+    border-top: .2rem double #000;
+    border-bottom: .2rem double #000;
 }
+
 main h3 {
-    font-size: 3;
-    font-family: Orbitron;
-    color: black;
+    font-size: 1.2rem;
+    font-family: Holtwood One SC;
 }
+
 main mark{
     background-color: inherit;
-    color: #2370a0;
+    font-size: 1.2rem;
 }
 
 main p {
+    margin-left: 30%;
+    margin-right: 30%;
     padding-left: 1rem;
+}
+main a {
+    color: inherit;
 }
 
 main ul {
@@ -161,10 +210,7 @@ main ul {
 }
 main ul li {
     margin-left: 1rem;
-    list-style-type: disc;
-}
-main ul li a{
-    color: #fff;
+    list-style-type: circle;
 }
 /* @media screen and (min-width: 800px){
    main{
@@ -172,19 +218,26 @@ main ul li a{
    }
 } */
 
+/*** FOOTER ***/
+
 footer{
-    background-color: #2370a0;
-    padding: 1rem;
-    color: #fff;
     text-align: center;
     font-size: 1.5rem;
+
+    /* background-color: #000;
+    color: #fff; */
+
+    padding: 1rem;
+
+    border-top: .4rem double #000;
 }
 footer i{
     font-size: 1.3rem;
 }
 
 footer p{
-    margin-top: .5rem;
     font-family: Lilita One;
-    font-size: .7rem
+    font-size: .7rem;
+
+    margin-top: .5rem;
 }

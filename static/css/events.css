@@ -4,8 +4,8 @@
     flex-direction: column;
     width: 17rem;
     float: right;
-    border-left: .05rem ridge #fff;
-    border-bottom: .05rem ridge #fff;
+    border-left: .2rem solid #000;
+    border-bottom: .2rem solid #000;
     color: #000;
 }
 
@@ -17,13 +17,13 @@
 
 #event > h1{
     font-size: 3rem;
-    color: #2370a0;
+    color: #000;
     margin-bottom: 1rem;
     margin-top: 1rem;
     text-align: center;
 }
 #event .card {
-    background-color: #2370a0;
+    background-color: #000;
     margin: 1rem;
     width: auto;
     text-align: center;
@@ -34,7 +34,7 @@
 
 #event .card h1{
     font-size: 2rem;
-    color: #133642;
+    color: #fff;
 }
 #event .card i{
     font-size: .8rem

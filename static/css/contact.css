@@ -6,12 +6,12 @@ main .socials{
     font-size: 4rem;
 }
 main .socials i{
-    background-color: #2370a0;
+    background-color: #000;
 
 }
 
 main form{
-    background-color: #2370a0;
+    background-color: #000;
     max-width: 40rem;
 
     margin-right: auto;
