@@ -1,4 +1,6 @@
-<?php $hearder = <<<EOT
+<?php
+$title = "A propos";
+$hearder = <<<EOT
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
 EOT ?>
 <?php require 'templates/layout/default.php' ?>
@@ -34,7 +36,7 @@ EOT ?>
     <h2>Mes Projets</h2>
     <h3>Mes projets persos</h3>
         <p>Tout mes projets solo. De la simple transcription à des albums plus complets.
-        Pour l'instant assez incomplet mais tout est en progret. 
+        Pour l'instant assez incomplet mais tout est en progret.
         Vous pouvez retrouver tout ceci sur Instagram ou sur tout mes autres reseau sociaux </p>
         <div class="bandeau_albums">
         </div>

@@ -1,4 +1,6 @@
-<?php $hearder = <<<EOT
+<?php
+$title = "Contact";
+$hearder = <<<EOT
     <link rel="stylesheet" type="text/css" href="static/css/contact.css">
 EOT;
 ?>

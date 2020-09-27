@@ -1,11 +1,13 @@
-<?php $hearder = <<<EOT
+<?php
+$title = "Mon CV";
+$hearder = <<<EOT
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cv.css') }}">
 EOT; ?>
 <?php require 'templates/layout/default.php' ?>
 
 <article id="cv">
 
-    <h1>Mon CV</h1>
+    <!-- <h1>Mon CV</h1> -->
 
     <h2>Formations</h2>
 
