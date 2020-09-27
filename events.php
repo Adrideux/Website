@@ -1,4 +1,11 @@
 <?php
+$title = "Mes Prochaines Dates";
+$hearder = <<<EOT
+        <link rel="stylesheet" type="text/css" href="static/css/events.css">
+EOT; ?>
+<?php require 'templates/layout/default.php' ?>
+
+<?php
 
     $pdo = new PDO('sqlite:database/events.db');
     $query = $pdo->query('SELECT * FROM EVENT');
@@ -7,21 +14,27 @@
         die('Erreur SQL');
     }
     $db = $query->fetchAll(PDO::FETCH_OBJ);
+
+    require "static/php/month_name.php";
+    require_once "static/php/sorting.php";
+    $db = db_sorting($db);
 ?>
-<aside id="event">
-    <h1>Prochaines Dates</h1>
+    <h1>Mes Prochaines Dates</h1>
+<div id="event">
 
     <?php
-    $at_least_one=0;
     foreach ($db as $key) {
-        if( ($key->DATE_YEAR*10000)+($key->DATE_MONTH*100)+$key->DATE_DAY > (date('Y')*10000)+(date('m')*100)+date('d') ){
             $at_least_one=1;
             ?>
 
-            <section class="card">
-                <h1><?= $key->NAME ?></h1>
+            <section class="card<?php
+                if( ($key->DATE_YEAR*10000)+($key->DATE_MONTH*100)+$key->DATE_DAY < (date('Y')*10000)+(date('m')*100)+date('d') ){
+                    echo " done";
+                }
+            ?>">
+                <h2><?= $key->NAME ?></h2>
                 <p class="date">
-                    <?= $key->DATE_DAY ?>/<?= $key->DATE_MONTH ?>/<?= $key->DATE_YEAR ?>
+                    <?= $key->DATE_DAY ?> <?= month_name($key->DATE_MONTH) ?> <?= $key->DATE_YEAR ?>
                 </p>
                 <p class="time"><?= $key->DATE_HOUR ?>h<?= $key->DATE_MINUTE ?></p>
                 <p class="lieu">
@@ -41,27 +54,19 @@
 
 
                     if($key->CANCELED == 1)
-                        echo "<h2 class='canceled'>ANNULÉ</h2>";
+                        echo "<h3 class='canceled'>ANNULÉ</h3>";
                     if($key->REPORTED == 1)
-                        echo "<h2 class='canceled'>ÉVÈNEMENT REPORTÉ</h2>";
+                        echo "<h3 class='canceled'>ÉVÈNEMENT REPORTÉ</h3>";
                     if($key->SOLDOUT == 1)
-                        echo "<h2 class='canceled'>PLUS DE PLACES DISPONIBLE</h2>";
+                        echo "<h3 class='canceled'>PLUS DE PLACES DISPONIBLE</h3>";
                 ?>
 
             </section>
 
             <?php
-        }
-    }
-    if($at_least_one == 0){
-        echo "
-            <section class='card'>
-                <h1>Aucune date de prevue pour l'instant</h1>";
-        require 'templates/layout/partials/socials.html';
-        echo "
-            </section>
-        ";
     }
     ?>
 
-</aside>
+</div>
+
+<?php require 'templates/layout/footer.php' ?>

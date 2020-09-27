@@ -1,57 +1,57 @@
 
 #event{
     display: flex;
-    flex-direction: column;
-    width: 17rem;
-    float: right;
-    border-left: .2rem solid #000;
-    border-bottom: .2rem solid #000;
-    color: #000;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 #event *:not(i){
     margin: .5rem;
-    font-size: .8rem;
-    font-family: Lilita One;
+    /* font-size: .8rem; */
+    /* font-family: Lilita One; */
 }
 
-#event > h1{
-    font-size: 3rem;
-    color: #000;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-}
 #event .card {
-    background-color: #000;
-    margin: 1rem;
-    width: auto;
+    width: 17rem;
+
     text-align: center;
-    border: .05rem ridge #fff;
-    box-shadow: .3rem .3rem white;
-    padding: .5rem
+
+    margin: .7rem;
+    margin-top: 1rem;
+    padding: .5rem;
+
+    border: .05rem solid #000;
+    border-top: .3rem double #000;
+    border-bottom: .3rem double #000;
 }
 
 #event .card h1{
-    font-size: 2rem;
-    color: #fff;
+    /* font-size: 2rem; */
 }
 #event .card i{
     font-size: .8rem
 }
 #event .card .canceled{
     color: #d00000;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+
     padding: inherit;
+
+    border: .1rem solid #000;
 }
-@media screen and (max-width: 850px) {
-    #event {
-        justify-content: center;
-        width: 100%;
-        flex-direction: row;
-        /* border: .05rem ridge #fff; */
-    }
-    #event > h1 {
-        display: none;
-    }
+
+#event .done{
+    order:1;
+    /* display: none; */
+    /* align-self: flex-end; */
+}
+
+#event .done p{
+    text-decoration: line-through;
+    text-decoration-thickness: .2rem;
 }
