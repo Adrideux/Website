@@ -1,0 +1,102 @@
+article {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: white;
+  width: 80%;
+  /* height: 65%; */
+  position: relative;
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  padding: 2%;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Left division */
+
+.left-division {
+  border-right: 2px solid grey;
+  width: 50%;
+  text-align: center;
+}
+
+.left-division h3{
+  padding-bottom: 7%;
+}
+
+
+.form-styles * {
+  vertical-align: top;
+  padding-right: 2%;
+  width: 90%;
+  height: 15rem;
+
+}
+textarea {
+  color: grey;
+  width: 80%;
+}
+
+
+/* right division */
+
+.right-division {
+  width: 50%;
+}
+
+.right-form {
+  text-align: center;
+  padding-top: 7%;
+}
+
+.stamp-container {
+  text-align: right;
+}
+.stamp {
+  width: 6rem;
+  height: 7.5rem;
+}
+
+input{
+    color: grey;
+    margin-bottom: 1rem;
+    width: 14rem;
+}
+
+.submit-button {
+  position: relative;
+  left: 50%;
+  padding-top: 22%;
+  text-align: center;
+}
+.submit-it {
+  background: #D89BA7;
+  width: 50%;
+  border-radius: 20% / 20%;
+}
+
+/* media */
+
+@media screen and (max-width: 900px){
+   article{
+       flex-direction: column;
+   }
+}
+
+@media screen and (max-width: 900px){
+   .left-division{
+       border-right: none;
+       border-bottom: 2px solid grey;
+       width: 100%;
+       padding-bottom: 4rem;
+   }
+}
+
+@media screen and (max-width: 900px){
+   .right-division{
+       width: 100%;
+       padding-top: 4rem;
+   }
+}

@@ -1,36 +1,51 @@
+
+
 <?php
 $title = "Contact";
 $hearder = <<<EOT
-    <link rel="stylesheet" type="text/css" href="static/css/contact.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="static/css/contact2.css">
 EOT;
 ?>
 <?php require 'templates/layout/default.php' ?>
 
-<?php $formList = [
-    ["<input type='text' name='nom' placeholder='Votre nom' autofocus/>","<i class='fas fa-user'></i>"],
-    ["<input type='email' name='mail' placeholder='Votre address Mail' />","<i class='far fa-envelope'></i>"],
-    ["<input type='tel' name='tel' placeholder='Numero de téléphone'  />","<i class='fas fa-mobile-alt'></i>"],
+<article>
+    <div class="left-division">
+        <h2>Contactez moi</h2>
+        <h3>Pour un concert par exemple</h3>
+        <div class="form-styles">
+            <label for="textarea">Votre message:</label>
+            <textarea autofocus>Pour un concert veuillez indiquer :
+            La Date:
+            Le Lieux:
+            ... :</textarea>
+        </div>
+    </div>
 
-    ["<input type='text' name='name' placeholder='Nom de l évenement' />","<i class='fas fa-user'></i>"],
-    ["<input type='date' name='date' />","<i class='far fa-clock'></i>"],
-    ["<input type='time' name='time' />","<i class='fas fa-calendar'></i>"],
-    ["<input type='text' name='place' placeholder='Adresse de l évenement'>","<i class='fas fa-map'></i>"],
+    <div class="right-division">
+        <div class="stamp-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Stamp_Bermuda_1936_2.5p.jpg" class="stamp">
+        </div>
 
-    ["<input type='checkbox' name='paid' value='yes' id='paid-yes'> <label for='paid-yes'>L évenement sera payant pour le publique</label>","<i class='fas fa-money-bill-alt'></i>"],
-    ["<input type='number' name='price' placeholder='Prix du ticket' />","<i class='fas fa-tag'></i>"],
-    ["<input type='number' name='number of places' placeholder='Nombre de places disponible' />","<i class='fas fa-couch'></i>"],
-
-    ["<textarea type='text' name='details' placeholder='Ecrivez votre message'></textarea>","<i class='fas fa-comment-alt'></i>"],
-
-    ["<button type='submit' name='submit-contact'>Envoyer</button>","<i class='fas fa-thumbs-up'></i>"]
-
-];
-?>
-
-<form class="contact" action="contact.php" method="post">
-    <?php foreach ($formList as $ii => $i)
-        echo "<div class='$ii'>". $i[1].$i[0]."</div>";
-    ?>
-</form>
+        <div class="right-form">
+            <p>
+                <label for="nom">Votre Nom:</label>
+                <input type="text" name="nom" value="" />
+            </p>
+            <p>
+                <label for="mail">Votre mail:</label>
+                <input type="email" name="mail" value="" />
+            </p>
+            <p>
+                <label for="tel">Votre Telephone:</label>
+                <input type="tel" name="tel" value="(facultatif)" />
+            </p>
+        </div>
+        <div class="submit-button">
+            <div class="submit-it">SEND YOUR MESSAGE</div>
+        </div>
+    </div>
+</article>
 
 <?php require 'templates/layout/footer.php' ?>
