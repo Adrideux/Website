@@ -47,11 +47,17 @@
 
 #event .done{
     order:1;
-    /* display: none; */
+    display: none;
     /* align-self: flex-end; */
 }
 
 #event .done p{
     text-decoration: line-through;
     text-decoration-thickness: .2rem;
+}
+.checkbox::before{
+    content: '\2610';
+}
+.checkboxchecked::before{
+    content: '\2612';
 }

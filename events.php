@@ -2,6 +2,8 @@
 $title = "Mes Prochaines Dates";
 $hearder = <<<EOT
         <link rel="stylesheet" type="text/css" href="static/css/events.css">
+        <!-- Javascript -->
+        <script defer src="static/js/events.js"></script>
 EOT; ?>
 <?php require 'templates/layout/default.php' ?>
 
@@ -19,7 +21,10 @@ EOT; ?>
     require_once "static/php/sorting.php";
     $db = db_sorting($db);
 ?>
-    <h1>Mes Prochaines Dates</h1>
+    <h2>Mes Prochaines Dates</h2>
+    <p id="checkbox" class="checkbox">
+        Dates passées
+    </p>
 <div id="event">
 
     <?php
