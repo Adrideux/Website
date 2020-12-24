@@ -1,7 +1,7 @@
 <?php
 $title = "Mes Prochaines Dates";
 $hearder = <<<EOT
-        <link rel="stylesheet" type="text/css" href="static/css/events.css">
+        <link rel="stylesheet" type="text/css" href="static/css/page css/events.css">
         <!-- Javascript -->
         <script defer src="static/js/events.js"></script>
 EOT; ?>

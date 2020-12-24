@@ -1,0 +1,86 @@
+/* variables */
+header{
+    --menu-size: 5rem;
+    --menu-speed: .7s;
+}
+
+/*** Menu ***/
+
+header .toggler {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--menu-size);
+    height: var(--menu-size);
+
+    opacity: 0;
+
+    z-index: 4;
+
+    cursor: pointer;
+}
+
+header .burger{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--menu-size);
+    height: var(--menu-size);
+
+    color: var(--primary);
+
+    font-size: 4rem;
+    font-family: sans-serif;
+    text-align: center;
+
+    z-index: 1;
+}
+
+header .burger::before{
+    content: '\2630';
+}
+
+header .toggler:checked + .burger::before{
+    content: '\2716';
+}
+
+/*** Navigation Styles ***/
+
+nav {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    visibility: hidden;
+    background: var(--secondary);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .4s ease .4s;
+    transition-delay: 0s;
+    transform: scale(0);
+    border-radius: 50%;
+}
+
+nav a{
+    font-size: 2rem;
+    font-family: var(--font-family-h);
+    color: var(--primary);
+
+    margin: 1rem;
+    padding: .5rem;
+}
+
+header .toggler:checked ~ nav {
+    visibility: visible;
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}

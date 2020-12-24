@@ -5,7 +5,7 @@ $title = "Contact";
 $hearder = <<<EOT
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="static/css/contact2.css">
+    <link rel="stylesheet" type="text/css" href="static/css/page css/contact.css">
 EOT;
 ?>
 <?php require 'templates/layout/default.php' ?>
