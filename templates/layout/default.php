@@ -9,17 +9,17 @@
 
         <title>Adrien Quintane<?php if(isset($title)){echo " - $title";}?></title>
 
-        <link rel="shortcut icon" href="static/imgs/logo-adri.png" />
+        <link rel="shortcut icon" href="/static/imgs/logo-adri.png" />
 
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet">
 
         <!-- css -->
-        <link rel="stylesheet" type="text/css" href="static/css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="static/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="static/css/menu.css" />
-        <link rel="stylesheet" type="text/css" href="static/css/socials.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/menu.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/socials.css" />
 
         <!-- other hearders -->
         <?php echo $hearder ?>
@@ -31,11 +31,11 @@
             <div class="burger"></div>
 
 	           <nav>
-                   <a href="index.php">accueil</a>
+                   <a href="/index.php">Accueil</a>
                    <!-- <a href="cv.php">cv</a> -->
-                   <a href="about.php">a propos</a>
-                   <a href="events.php">Mes prochaines Dates</a>
-                   <a href="contact.php">contact</a>
+                   <a href="/about.php">A propos</a>
+                   <a href="/events.php">Mes prochaines Dates</a>
+                   <a href="/contact.php">Contact</a>
 	          </nav>
         </header>
 

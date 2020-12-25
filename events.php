@@ -8,18 +8,9 @@ EOT; ?>
 <?php require 'templates/layout/default.php' ?>
 
 <?php
-
-    $pdo = new PDO('sqlite:database/events.db');
-    $query = $pdo->query('SELECT * FROM EVENT');
-    if($query === false){
-        var_dump($pdo->errorInfo());
-        die('Erreur SQL');
-    }
-    $db = $query->fetchAll(PDO::FETCH_OBJ);
+    $db = include "static/php/getEvents.php";
 
     require "static/php/month_name.php";
-    require_once "static/php/sorting.php";
-    $db = db_sorting($db);
 ?>
     <h2>Mes Prochaines Dates</h2>
     <p id="checkbox" class="checkbox">
@@ -28,8 +19,9 @@ EOT; ?>
 <div id="event">
 
     <?php
+    $i=0;
     foreach ($db as $key) {
-            $at_least_one=1;
+        $i=$i+1;
             ?>
 
             <section class="card<?php

@@ -10,4 +10,6 @@ $hearder = <<<EOT
 EOT; ?>
 <?php require 'templates/layout/default.php' ?>
 
+<?php require 'templates/layout/partials/slider.php' ?>
+
 <?php require 'templates/layout/footer.php' ?>

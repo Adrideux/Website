@@ -1,7 +1,7 @@
 <?php
 $title = "A propos";
 $hearder = <<<EOT
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" type="text/css" href="#">
 EOT ?>
 <?php require 'templates/layout/default.php' ?>
 
