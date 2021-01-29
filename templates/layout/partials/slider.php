@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="static/css/slider.css" />
 
 <div class="slides">
 
@@ -10,7 +9,7 @@
         ?></h2>
         <p>
             <?php
-                require "static/php/month_name.php";
+                require_once "static/php/month_name.php";
                 if ($nextGig->CANCELED == 1) {
                     echo "ATTENTION: Le concert de ".$nextGig->NAME." du ".$nextGig->DATE_DAY." ".month_name($nextGig->DATE_MONTH)." ".$nextGig->DATE_YEAR." à ".$nextGig->PLACE." est annulé.";
                 }else{
@@ -19,8 +18,10 @@
             ?>
         </p>
     </a>
-    <a href="/contact.php" class="slide">
-        <h2>Vous voulez me contacter ?</h2>
-    </a>
+    <div href="/contact.php" class="slide">
+        <h2>
+            <?php require "templates/layout/partials/socials.html"?>
+        </h2>
+    </div>
 
 </div>

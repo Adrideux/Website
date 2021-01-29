@@ -1,17 +1,18 @@
 .slides{
     position: relative;
     width: 200%;
+    height: 30vw;
+    min-height: 15rem;
+    max-height: 50rem;
 
     margin: 0;
     left: 0;
 
-    animation: slider 10s linear infinite;
+    animation: slider 10s cubic-bezier(.96,-0.4,0,1) infinite;
 }
 .slides .slide{
     width: 50%;
-    height: 30vw;
-    min-height: 15rem;
-    max-height: 50rem;
+    height: 100%;
 
     float: left;
     transition: 2s;
@@ -25,14 +26,17 @@
     flex-direction: column;
     justify-content: space-around;
 }
-.slides .slide *{
+
+.slides .slide *:not(.socials,.socials *){
 
     color: var(--primary);
-    background-color: #fff;
+    background-color: var(--secondary);
 
-    border-radius: .4rem;;
+    border-radius: .4rem;
 
     z-index: 1;
+
+    border: .3rem double var(--primary);
 }
 .slides .slide p {
     padding: .5rem;

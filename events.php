@@ -10,7 +10,7 @@ EOT; ?>
 <?php
     $db = include "static/php/getEvents.php";
 
-    require "static/php/month_name.php";
+    // include "static/php/month_name.php";
 ?>
     <h2>Mes Prochaines Dates</h2>
     <p id="checkbox" class="checkbox">

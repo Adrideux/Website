@@ -9,7 +9,7 @@
 
         <title>Adrien Quintane<?php if(isset($title)){echo " - $title";}?></title>
 
-        <link rel="shortcut icon" href="/static/imgs/logo-adri.png" />
+        <link rel="shortcut icon" href="/static/imgs/logo_adri.png" />
 
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
         <link rel="stylesheet" type="text/css" href="/static/css/menu.css" />
         <link rel="stylesheet" type="text/css" href="/static/css/socials.css" />
+        <link rel="stylesheet" type="text/css" href="static/css/slider.css" />
 
         <!-- other hearders -->
         <?php echo $hearder ?>
@@ -34,9 +35,11 @@
                    <a href="/index.php">Accueil</a>
                    <!-- <a href="cv.php">cv</a> -->
                    <a href="/about.php">A propos</a>
-                   <a href="/events.php">Mes prochaines Dates</a>
+                   <a href="/events.php">Dates</a>
                    <a href="/contact.php">Contact</a>
 	          </nav>
         </header>
 
     	<main>
+
+        <?php require 'templates/layout/partials/slider.php' ?>

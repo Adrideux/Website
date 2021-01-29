@@ -7,9 +7,9 @@ $hearder = <<<EOT
 		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
-EOT; ?>
+EOT;
+$header = null;
+?>
 <?php require 'templates/layout/default.php' ?>
-
-<?php require 'templates/layout/partials/slider.php' ?>
 
 <?php require 'templates/layout/footer.php' ?>

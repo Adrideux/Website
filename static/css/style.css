@@ -1,7 +1,9 @@
 /* variables */
 :root{
     --primary: #eb9109;
-    --secondary: rgba(13,36,42,.8);
+    --secondary: #133642;
+    --secondary-transparent: rgba(13,36,42,.7);
+    --background-color: #ebebeb;
 
     --font-family-title: Georgia;
     --font-family-h: Holtwood One SC;
@@ -37,38 +39,40 @@ main {
     text-align: center;
 
     color: #000;
-    /* background-color: #f5f2d5; */
+    background-color: var(--background-color);
 
     padding-bottom: 3rem;
     /* padding-left: 2rem; */
     min-height: 100%;
 }
 
-main *{
-    font-size: 1rem;
-    color: #000;
-}
-
 main h1 {
     font-size: 3rem;
-    font-family: Georgia;
+    font-family: var(--font-family-title);
 
     margin-bottom: 3rem;
     margin-top: 3rem;
 }
 main h2{
+    width: 30%;
+    max-width: 40rem;
+    min-width: 15rem;
+
     font-size: 1.5rem;
     font-family: var(--font-family-h);
+
+    color: var(--primary);
+    background-color: var(--secondary);
 
     /* color: #fff;
     background-color: #000; */
 
     margin: 1.5rem;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: auto;
+    margin-right: auto;
 
-    border-top: .2rem double #000;
-    border-bottom: .2rem double #000;
+    border-radius: .4rem;
+    border: .3rem double var(--primary);
 }
 
 main h3 {
@@ -110,16 +114,16 @@ footer{
     text-align: center;
     font-size: 1.5rem;
 
-    /* background-color: #000;
-    color: #fff; */
+    /* background-color: #000; */
+    /* color: #fff; */
 
     padding: 1rem;
 
     border-top: .4rem double #000;
 }
-footer i{
+/* footer i{
     font-size: 1.3rem;
-}
+} */
 
 footer p{
     font-family: var(--font-family-h);

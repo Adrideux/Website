@@ -1,6 +1,6 @@
 /* variables */
 header{
-    --menu-size: 5rem;
+    --menu-size: 4rem;
     --menu-speed: .7s;
 }
 
@@ -57,7 +57,7 @@ nav {
     height: 200%;
 
     visibility: hidden;
-    background: var(--secondary);
+    background: var(--secondary-transparent);
 
     display: flex;
     flex-direction: column;
@@ -73,6 +73,8 @@ nav {
 }
 
 nav a{
+    max-width: 100%;
+
     font-size: 2rem;
     font-family: var(--font-family-h);
     color: var(--primary);
