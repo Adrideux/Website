@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded',init,false);
 
+// TODO: REMOVE JS
+
 function init() {
     const checkbox = document.getElementById("checkbox");
     checkbox.addEventListener("click",function(){
